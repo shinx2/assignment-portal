@@ -15,7 +15,7 @@ const Assignment = require("../models/assignment.js");
 //     });
 // });
 
-// show all products
+// show all assignment
 assignments.get("/", (req, res) => {
     Assignment.find({}, (err, allAssignments) => {
         if (err) {
@@ -39,7 +39,7 @@ assignments.get("/findassignment/:id", (req, res) => {
 
 });
 
-//add new product
+//add new assignment 
 assignments.post("/", (req, res) => {
     Assignment.create(req.body, (error, createAssignment) => {
         if (error) {
@@ -50,7 +50,7 @@ assignments.post("/", (req, res) => {
     });
 });
 
-// edit product
+// edit assignement 
 assignments.put("/:id", (req, res) => {
     Assignment.findByIdAndUpdate(req.params.id, req.body, { new: true },
         (err, updatedAssignment) => {
@@ -63,7 +63,7 @@ assignments.put("/:id", (req, res) => {
     ).populate("questionsCart.questionId");
 });
 
-// delete products in the catergory page e.g electronic page all the electronic items will be listed
+// delete 
 assignments.delete("/:id", (req, res) => {
     Assignment.findByIdAndRemove(req.params.id, (err, deletedAssignment) => {
         if (err) {

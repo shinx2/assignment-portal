@@ -41,7 +41,7 @@ assignmentcarts.get("/:id", (req, res) => {
     .populate("assignmentsCart.assignmentId");
 });
 
-//DELETE ORDER
+//DELETE 
 // userassignments.delete("/:id", (req, res) => {
 //   Order.findByIdAndRemove(req.params.id, (err, deletedOrder) => {
 //     if (err) {
@@ -60,7 +60,7 @@ assignmentcarts.get("/:id", (req, res) => {
 //   });
 // });
 
-// UPDATE ORDER
+// UPDATE 
 assignmentcarts.put("/:id", (req, res) => {
   assignmentCart.findByIdAndUpdate(
     req.params.id,

@@ -15,7 +15,7 @@ const Question = require("../models/question.js");
 //     });
 // });
 
-// show all products
+// show all questions
 questions.get("/", (req, res) => {
     Question.find({}, (err, allQuestions) => {
         if (err) {
@@ -37,7 +37,7 @@ questions.get("/", (req, res) => {
 //     });
 // });
 
-//add new product
+//add new question
 questions.post("/", (req, res) => {
     Question.create(req.body, (error, createQuestion) => {
         if (error) {
@@ -48,7 +48,7 @@ questions.post("/", (req, res) => {
     });
 });
 
-// edit product
+// edit question
 questions.put("/:id", (req, res) => {
     Question.findByIdAndUpdate(req.params.id, req.body, { new: true },
         (err, updatedQuestion) => {
@@ -61,7 +61,7 @@ questions.put("/:id", (req, res) => {
     );
 });
 
-// delete products in the catergory page e.g electronic page all the electronic items will be listed
+// delete question
 questions.delete("/:id", (req, res) => {
     Questions.findByIdAndRemove(req.params.id, (err, deletedQuestion) => {
         if (err) {
